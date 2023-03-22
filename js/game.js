@@ -388,25 +388,25 @@ function clickTile(tileId, symbol) {
     if (symbol == 'X') {
         imgSymbol.style.width = '60%'
         if(localStorage.getItem('theme') == null){
-            imgSymbol.src = '../assets/x-light.png'
+            imgSymbol.src = './assets/x-light.png'
         }
         else if(localStorage.getItem('theme') == 'light'){
-            imgSymbol.src = '../assets/x-light.png'
+            imgSymbol.src = './assets/x-light.png'
         }
         else{
-            imgSymbol.src = '../assets/x-night.png'
+            imgSymbol.src = './assets/x-night.png'
         }
     }
     else if (symbol == 'O') {
         imgSymbol.style.width = '74%'
         if(localStorage.getItem('theme') == null){
-            imgSymbol.src = '../assets/o-light.png'
+            imgSymbol.src = './assets/o-light.png'
         }
         else if(localStorage.getItem('theme') == 'light'){
-            imgSymbol.src = '../assets/o-light.png'
+            imgSymbol.src = './assets/o-light.png'
         }
         else{
-            imgSymbol.src = '../assets/o-night.png'
+            imgSymbol.src = './assets/o-night.png'
         }
     }
     document.getElementById(tileId).appendChild(imgSymbol)
@@ -490,10 +490,10 @@ light.onclick = () => {
     for(var i = 0; i < borders.length; i++){
         if(borders[i].children[0]){
             if(borders[i].children[0].src[borders[i].children[0].src.length - 11] == 'x'){
-                borders[i].children[0].src = '../assets/x-night.png'
+                borders[i].children[0].src = './assets/x-night.png'
             }
             else if(borders[i].children[0].src[borders[i].children[0].src.length - 11] == 'o'){
-                borders[i].children[0].src = '../assets/o-night.png'
+                borders[i].children[0].src = './assets/o-night.png'
             }
         }
     }
@@ -516,10 +516,10 @@ night.onclick = () => {
     for(var i = 0; i < borders.length; i++){
         if(borders[i].children[0]){
             if(borders[i].children[0].src[borders[i].children[0].src.length - 11] == 'x'){
-                borders[i].children[0].src = '../assets/x-light.png'
+                borders[i].children[0].src = './assets/x-light.png'
             }
             else if(borders[i].children[0].src[borders[i].children[0].src.length - 11] == 'o'){
-                borders[i].children[0].src = '../assets/o-light.png'
+                borders[i].children[0].src = './assets/o-light.png'
             }
         }
     }
