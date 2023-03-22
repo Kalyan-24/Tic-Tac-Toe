@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div class="turn">
+        <h1 id="player-1">Player :- </h1>
+        <h1 id="player-2">Computer :- </h1>
+    </div>
+
+    <div id="game-board-conatiner">
+        <div id="game-board">
+            <span class="tile theme" id="1"></span>
+            <span class="tile theme" id="2"></span>
+            <span class="tile theme" id="3"></span>
+            <span class="tile theme" id="4"></span>
+            <span class="tile theme" id="5"></span>
+            <span class="tile theme" id="6"></span>
+            <span class="tile theme" id="7"></span>
+            <span class="tile theme" id="8"></span>
+            <span class="tile theme" id="9"></span>
+        </div>
+
+
+
+        <div class="game-over">
+            <div id="who-won">Kalyan wins</div>
+            
+            <button id="play-again">Play Again</button>
+        </div>
+    </div>
+
+    <div class="display-theme">
+        <span id="light"><ion-icon name="sunny-outline"></ion-icon></span>
+        <span id="night"><ion-icon name="moon-outline"></ion-icon></span>
+    </div>
+    <script src="./js/game.js"></script>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

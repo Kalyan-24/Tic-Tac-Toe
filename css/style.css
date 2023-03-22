@@ -1,0 +1,376 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#title{
+    font-size: 4vmax;
+    color: white;
+    font-style: italic;
+    padding: 0 20px;
+    background-color: blueviolet;
+}
+
+
+.versus-selector, .difficulty-selector, .name-selector{
+    display: flex;
+    border: 1px solid #0D1821;
+    border-radius: 20px;
+    width: 75vmin;
+    margin: auto;
+    aspect-ratio: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.difficulty-selector, .name-selector{
+    display: none;
+}
+
+.difficulty-selector .difficulty-selector-button{
+    font-size: 24px;
+    width: 80%;
+    background-color: blueviolet;
+    color: #fff;
+    border-radius: 4px;
+    border: none;
+    padding: 7px 0;
+    cursor: pointer;
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.difficulty-selector .difficulty-selector-button input{
+    appearance: none;
+    
+}
+.difficulty-selector .difficulty-selector-button input:checked + label{
+    display: block;
+}
+
+.difficulty-selector .difficulty-selector-button label{
+    display: none;
+}
+.difficulty-container{
+    height: 80%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.versus-selector .versus-selector-button{
+    font-size: 24px;
+    width: 80%;
+    background-color: blueviolet;
+    color: #fff;
+    border-radius: 4px;
+    border: none;
+    padding: 7px 0;
+    cursor: pointer;
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    text-align: center;
+}
+
+.versus-selector .versus-selector-button:hover{
+    background-color: rgb(104, 6, 195);
+    transition: all 0.3s ease-in-out;
+    transform: scale(1.1);
+}
+
+form .name{
+    padding: 5px 10px;
+    border: 1px solid black;
+    border-radius: 4px;
+    background-color: #fff;
+}
+form .name-container{
+    display: flex;
+}
+
+form .name input{
+    height: 30px;
+    width: 100%;
+    font-size: 20px;
+    border: none;
+    outline: none;
+}
+form .name-holder{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#player-form{
+    height: 100%;
+    width: 100%;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+form span{
+    cursor: pointer;
+    height: 40px;
+}
+form span ion-icon{
+    font-size: 40px;
+    color: rgba(0, 128, 0, 0.5);
+    pointer-events: none;
+}
+
+#play-button, #play-button-2{
+    padding: 8px 18px;
+    font-size: 24px;
+    background-color: blueviolet;
+    color: #fff;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    margin: 0rem;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.2)
+}
+#play-button-2{
+    margin-bottom: 6rem;
+}
+#play-button:hover, #play-button-2:hover{
+    background-color: rgb(104, 6, 195);
+    transition: all 0.3s ease-in-out;
+    transform: scale(1.1);
+}
+
+.display-theme{
+    position: absolute;
+    width: fit-content;
+    bottom: 0;
+    left: 0;
+    border: 1px solid #0D1821;
+    border-radius: 3px;
+    
+}
+.display-theme span{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.display-theme span ion-icon{
+    font-size: 24px;
+    padding: 10px;
+}
+
+.display-theme #night{
+    display: none;
+}
+
+
+
+/* Game.html */
+.turn{
+    margin: 20px;
+    margin-bottom: 0;
+    height: 20%;
+}
+#player-1{
+    color: rgba(0, 102, 255, 0.601);
+}
+#player-2{
+    color: rgba(255, 0, 0, 0.5);
+}
+
+#game-board-conatiner{
+    margin: 20px;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#game-board{
+    aspect-ratio: 1;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+}
+
+#game-board span{
+    width: 100%;
+    aspect-ratio: 1;
+    font-size: 65px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+}
+
+.theme-change:nth-child(1){
+    border: 6.5px solid transparent;
+    border-right: 6.5px solid rgb(191, 191, 206);
+    border-bottom: 6.5px solid rgb(191, 191, 206);
+    width: 100%;
+}
+.theme-change:nth-child(2){
+    border: 6.5px solid transparent;
+    border-left: 6.5px solid rgb(191, 191, 206);
+    border-right: 6.5px solid rgb(191, 191, 206);
+    border-bottom: 6.5px solid rgb(191, 191, 206);
+    width: 100%;
+}
+.theme-change:nth-child(3){
+    border: 6.5px solid transparent;
+    border-left: 6.5px solid rgb(191, 191, 206);
+    border-bottom: 6.5px solid rgb(191, 191, 206);
+}
+.theme-change:nth-child(4){
+    border: 6.5px solid transparent;
+    border-right: 6.5px solid rgb(191, 191, 206);
+    border-top: 6.5px solid rgb(191, 191, 206);
+    border-bottom: 6.5px solid rgb(191, 191, 206);
+}
+.theme-change:nth-child(5){
+    border: 6.5px solid rgb(191, 191, 206);
+}
+.theme-change:nth-child(6){
+    border: 6.5px solid transparent;
+    border-left: 6.5px solid rgb(191, 191, 206);
+    border-top: 6.5px solid rgb(191, 191, 206);
+    border-bottom: 6.5px solid rgb(191, 191, 206);
+}
+.theme-change:nth-child(7){
+    border: 6.5px solid transparent;
+    border-right: 6.5px solid rgb(191, 191, 206);
+    border-top: 6.5px solid rgb(191, 191, 206);
+}
+.theme-change:nth-child(8){
+    border: 6.5px solid transparent;
+    border-left: 6.5px solid rgb(191, 191, 206);
+    border-right: 6.5px solid rgb(191, 191, 206);
+    border-top: 6.5px solid rgb(191, 191, 206);
+}
+.theme-change:nth-child(9){
+    border: 6.5px solid transparent;
+    border-left: 6.5px solid rgb(191, 191, 206);
+    border-top: 6.5px solid rgb(191, 191, 206);
+}
+
+
+.theme:nth-child(1){
+    border: 6.5px solid transparent;
+    border-right: 6.5px solid #0D1821;
+    border-bottom: 6.5px solid #0D1821;
+    width: 100%;
+}
+.theme:nth-child(2){
+    border: 6.5px solid transparent;
+    border-left: 6.5px solid #0D1821;
+    border-right: 6.5px solid #0D1821;
+    border-bottom: 6.5px solid #0D1821;
+    width: 100%;
+}
+.theme:nth-child(3){
+    border: 6.5px solid transparent;
+    border-left: 6.5px solid #0D1821;
+    border-bottom: 6.5px solid #0D1821;
+}
+.theme:nth-child(4){
+    border: 6.5px solid transparent;
+    border-right: 6.5px solid #0D1821;
+    border-top: 6.5px solid #0D1821;
+    border-bottom: 6.5px solid #0D1821;
+}
+.theme:nth-child(5){
+    border: 6.5px solid #0D1821;
+}
+.theme:nth-child(6){
+    border: 6.5px solid transparent;
+    border-left: 6.5px solid #0D1821;
+    border-top: 6.5px solid #0D1821;
+    border-bottom: 6.5px solid #0D1821;
+}
+.theme:nth-child(7){
+    border: 6.5px solid transparent;
+    border-right: 6.5px solid #0D1821;
+    border-top: 6.5px solid #0D1821;
+}
+.theme:nth-child(8){
+    border: 6.5px solid transparent;
+    border-left: 6.5px solid #0D1821;
+    border-right: 6.5px solid #0D1821;
+    border-top: 6.5px solid #0D1821;
+}
+.theme:nth-child(9){
+    border: 6.5px solid transparent;
+    border-left: 6.5px solid #0D1821;
+    border-top: 6.5px solid #0D1821;
+}
+
+
+.game-over{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 80vmin;
+    height: 50vmin;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #0f202d;
+    background-color: ghostwhite;
+    border-radius: 25px;
+    box-shadow: 0 0 75px 2px dimgray;
+    font-size: 2rem;
+    animation: alert 0.5s;
+    display: none;
+    overflow: hidden;
+}
+
+@keyframes alert {
+    from{
+        transform: scale(30%);
+    }
+}
+.game-over div{
+    overflow-x: scroll;
+    width: 100%;
+    text-align: center;
+}
+.game-over div::-webkit-scrollbar{
+    display: none;
+}
+.game-over button{
+    padding: 8px 18px;
+    font-size: 24px;
+    background-color: blueviolet;
+    color: #fff;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.2)
+}
+
+
+
+@media(max-width: 700px){
+    .difficulty-selector{
+        height: 65vh;
+    }
+}
